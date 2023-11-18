@@ -648,112 +648,18 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  // if (number === 0) {
-  //   return number;
-  // }
-  // // let i = 1;
-  // let count = 0;
-  // // const arr = [];
-  // // while (i <= number) {
-  // //   if (i % 2 !== 0) {
-  // //     count += count;
-  // //   }
-  // //   i += i;
-  // // }
-  // // for (let i = 0; i <= number; i += i) {
-  // //   arr.push(i);
-  // //   break;
-  // //   // if (i % 2 !== 0) {
-  // //   //   count += i;
-  // //   // }
-  // // }
-  // // let l = 1;
-  // // while (l <= number) {
-  // //   arr.push(l);
-  // //   l += 1;
-  // // }
-  // // const a = arr.filter((n) => n % 2 !== 0);
-
-  // for (let i = 0; i <= number; i += i) {
-  //   if (i % 2 === 1) {
-  //     count += i;
-  //   }
-  // }
-
-  // return count;
-
-  // let count = 0; // counter?
-  // // if(num%2==1)return num;
-  // if (number % 2 === 1) {
-  //   // if remainder is 1 return inputed num number
-  //   // 7/2 = 3.5 reminder is 0.5 it will be rounded to 1 so when num is odd your program will output this num, so if i enter 7 I get 7 (but I need to get 1,3,5,7 if we include this number it is 4 if not it is 3)
-
-  //   // 8/2 = 4 reminder is 0 - number is even
-
-  //   // code here never runs for odd number just for even
-  //   // to runs for odd change code above
-  //   // just wrap for loop inside this if and dont return num
-  //   for (let i = 0; i <= number; i += i) {
-  //     // odd_num +=i%2;
-
-  //     // this dont count odd number this just add result of i%2, you need to check if this num is even or odd and if it is add 1 to odd_num
-  //     // so:
-  //     if (i % 2 !== 0) {
-  //       // number is odd, so add to counter
-  //       // you can also check with i%2 == 1
-  //       count += count;
-  //     }
-  //   }
-  // } // end if our if
-
-  // // print counter
-  // return count;
-
-  // let count = 0;
-  // for (let i = 0; i <= number; i += 1) {
-  //   if (i % 2 === 1) {
-  //     count += 1;
-  //   }
-  // }
-  // return count;
-
-  // let count = 0;
-  // if (number % 2 === 1) return number;
-  // for (let i = 0; i < number; i += i) {
-  //   count += i % 2;
-  // }
-  // return count;
-
-  // if (number === 0 || Number.isNaN(number)) {
-  //   return number;
-  // }
-
-  // // number -= number;
-  // return (number % 2 !== 0) + getCountOfOddNumbers(number);
-
-  // let i = 1;
-  // let count = 1;
-  // while (i <= number) {
-  //   if (i % 2 !== 0) {
-  //     count += 1;
-  //   }
-  //   i += i;
-  // }
-  // return Math.floor(number / 2);
-  // let i = 1;
-  // let count = 0;
-  // while (i <= number) {
-  //   if (i % 2 !== 0) {
-  //     count += 1;
-  //   }
-  //   i += 1;
-  // }
-  // return count;
   let count = 0;
-  const isOdd = (n) => !Number.isInteger(n / 2);
-  for (let i = 0; i < number; i += 1) {
-  // for (let i = 0; i < Math.abs(number); i += 1) {
-    if (isOdd(i)) {
+
+  if (number < 0) {
+    for (let i = 0; i <= -number; i += 1) {
+      if (i % 2 !== 0) {
+        count += 1;
+      }
+    }
+  }
+
+  for (let i = 0; i <= number; i += 1) {
+    if (i % 2 !== 0) {
       count += 1;
     }
   }
